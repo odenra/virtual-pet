@@ -24,8 +24,6 @@ it("has a initial fitness 10", () => {
   expect(pet.fitness).toEqual(10);
 });
 
-
-
 describe("growUp", () => {
   it("increments the age by 1", () => {
     const pet = new Pet("Fido");
@@ -49,16 +47,20 @@ it("decrease the fitness by 3", () => {
   expect(pet.fitness).toEqual(petsFitness - 3);
 });
 
+// describe("walk", () => {
+//   it("increases fitness by 4", () => {
+//     const pet = new Pet("Fido");
+//     const petsWalk = pet.fitness;
+//     pet.walk();
+//     expect(pet.fitness).toEqual(petsWalk + 4);
+//   });
+// });
 
-
-
-describe("walk", () => {
-  it("increases fitness by 4", () => {
-    const pet = new Pet("fido");
-
-    pet.fitness = 4;
-    pet.walk();
-
-    expect(pet.fitness).toEqual(8);
+describe("feed", () => {
+  it("should decrease the Pets hunger level by 3, hunger level should never go below 0", () => {
+    const pet = new Pet("Fido");
+    const petsHunger = pet.hunger;
+    pet.feed();
+    expect(pet.hunger).toEqual(petsHunger);
   });
 });

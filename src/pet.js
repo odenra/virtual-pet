@@ -18,5 +18,15 @@ Pet.prototype.walk = function () {
   }
 };
 
+Pet.prototype.feed = function () {
+  let hungerLevel = this.hunger;
+  
+  if (hungerLevel === 0 || hungerLevel <= 0) {
+    return false;
+  } else {
+    return (this.hunger -= 3);
+  }
+};
+
 
 module.exports = Pet;
